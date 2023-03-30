@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>Baloon</title>
+	</head>
+		<script>
+			function change()
+			{
+				var pad = parseInt(document.getElementById("pad").style.paddingTop)
+				var n = parseInt(document.getElementById("dot").style.height)
+				document.getElementById("dot").style.height = n + 10 + 'px';
+				document.getElementById("dot").style.width = n + 10 + 'px';
+				document.getElementById("pad").style.paddingTop = pad - 5 + 'px';
+				/* console.log(document.getElementById("dot").style.backgroundColor); */
+				if (document.getElementById("dot").style.backgroundColor == 'red')
+					document.getElementById("dot").style.backgroundColor = 'green';
+				else if (document.getElementById("dot").style.backgroundColor == 'green')
+					document.getElementById("dot").style.backgroundColor = 'blue';
+				else if (document.getElementById("dot").style.backgroundColor == 'blue')
+					document.getElementById("dot").style.backgroundColor = 'red';
+				/* console.log(document.getElementById("dot").style.backgroundColor); */
+				if (document.getElementById("dot").style.height == "420px")
+				{
+					document.getElementById("dot").style.height = "200px";
+					document.getElementById("dot").style.width = "200px";
+					document.getElementById("pad").style.paddingTop = "350px";
+				}
+			}
+			function smaller()
+			{
+				var n = parseInt(document.getElementById("dot").style.height)
+				var pad = parseInt(document.getElementById("pad").style.paddingTop)
+				if (document.getElementById("dot").style.backgroundColor == 'red')
+					document.getElementById("dot").style.backgroundColor = 'blue';
+				else if (document.getElementById("dot").style.backgroundColor == 'green')
+					document.getElementById("dot").style.backgroundColor = 'red';
+				else if (document.getElementById("dot").style.backgroundColor == 'blue')
+					document.getElementById("dot").style.backgroundColor = 'green';
+				if (document.getElementById("dot").style.height != "200px")
+				{
+					document.getElementById("dot").style.width = n - 5 + 'px';
+					document.getElementById("dot").style.height = n - 5 + 'px';
+					document.getElementById("pad").style.paddingTop = pad + 2.5 + 'px';
+				}
+			}
+		</script>
+	<body id="pad" style="text-align: center; padding-top: 350px;">
+		<div id="dot" style="height: 200px; width: 200px; background-color: red; border-radius: 50%; display: inline-block;" onclick="change()" onmouseleave="smaller()"></div>
+	</body>
+</html>

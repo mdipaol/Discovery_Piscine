@@ -1,0 +1,11 @@
+.center{
+	text-align: center;
+	padding-top: 20%;
+	background-color: white;
+}
+
+button{
+	font-size: 50px;
+	cursor: pointer;
+	border-radius: 25px;
+}

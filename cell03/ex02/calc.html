@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>Calculator</title>
+	</head>
+	<body style="text-align: center; padding-top: 350px; background-color: aqua;">
+		<input id="num1" type="text" style="font-size: 25px;">
+		<select id="op" style="font-size: 25px;">
+			<option>+</option>
+			<option>-</option>
+			<option>*</option>
+			<option>/</option>
+			<option>%</option>
+		</select>
+		<input id="num2" type="text" style="font-size: 25px;">
+		<button id="button" onclick="calc()" style="font-size: 25px;">Try me!</button>
+	</body>
+</html>
+<script>
+	function calc()
+	{
+		var op = document.getElementById("op").options[document.getElementById("op").selectedIndex].text;
+		var n1 =  parseInt(document.getElementById("num1").value);
+		var n2 = parseInt(document.getElementById("num2").value);
+		var res;
+
+		if (n1 < 0 || n2 < 0)
+		{
+			alert("Error :(");
+			console.log("Error :(");
+			return;
+		}
+		if (op == '+')
+			res = n1 + n2;
+		if (op == '-')
+			res = n1 - n2;
+		if (op == '*')
+			res = n1 * n2;
+		if (op == '/')
+			res = n1 / n2;
+		if (op == '%')
+			res = n1 % n2;
+		if ((op == '/' || op == '%') && n2 == 0)
+		{
+			alert("It’s over 9000!");
+			console.log("It’s over 9000!");
+			return;
+		}
+		else
+		{
+			alert(res);
+			console.log(res);
+		}
+	}
+	setInterval(function(){alert("Please, use me..")}, 30000);
+</script>
